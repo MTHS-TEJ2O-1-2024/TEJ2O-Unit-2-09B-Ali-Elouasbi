@@ -1,19 +1,20 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
- * This program ...
+ * Created by: Ali
+ * Created on: Oct 2024
+ * This program plays rock, paper, Scissors
 */
 
 // variables
 let randomNumber: number = 0
+let result = 0
 
 randomNumber = -1
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
 input.onGesture(Gesture.Shake, function () {
-    randomNumber = randint(0, 1)
+    randomNumber = randint(0, 2)
     basic.clearScreen()
 
     // if randomNumber was 0
@@ -36,9 +37,14 @@ input.onGesture(Gesture.Shake, function () {
 })
 
 input.onButtonPressed(Button.A, function () {
+    result = result +1
     basic.showIcon(IconNames.Yes)
+    basic.pause(2000)
+    basic.showIcon(IconNames.Happy)
 })
 
 input.onButtonPressed(Button.B, function () {
-    basic.showString('score : 1')
+    basic.clearScreen()
+    basic.showString('Score:' + result)
+    basic.showIcon(IconNames.Happy)
 })
