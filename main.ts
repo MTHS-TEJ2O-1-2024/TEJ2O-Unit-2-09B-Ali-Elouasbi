@@ -33,8 +33,12 @@ input.onGesture(Gesture.Shake, function () {
     // pasue and show you are ready again
     basic.pause(1000)
     basic.showIcon(IconNames.Happy)
+})
 
-    input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Yes)
-    
+})
+
+input.onButtonPressed(Button.B, function () {
+    basic.showString('score : 1')
 })
